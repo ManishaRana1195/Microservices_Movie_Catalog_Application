@@ -2,8 +2,8 @@ package com.manisharana.ratingsdataservice.resources;
 
 public class Rating {
 
-    private  String movieId;
-    private  String movieRating;
+    private String movieId;
+    private String movieRating;
 
     public Rating(String movieId, String movieRating) {
         this.movieId = movieId;

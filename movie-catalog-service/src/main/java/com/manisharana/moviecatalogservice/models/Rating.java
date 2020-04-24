@@ -6,6 +6,9 @@ public class Rating {
     private String movieId;
     private int movieRating;
 
+    Rating() {
+    }
+
     public Rating(String movieId, int movieRating) {
         this.movieId = movieId;
         this.movieRating = movieRating;

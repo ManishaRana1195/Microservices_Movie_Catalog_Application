@@ -7,16 +7,18 @@ Here, is the link to the presentation where I have summarized the basics of Micr
 2. Movie details service - which returns movie information for a movie ID.    
 3. Cataloging service - which takes the results from rating data and movie details service, combines them and provides it to the client.
 	 
-As shown below in the diagram, how three services will interact.      
+As shown below in the diagram, how three services will interact. 
 
-![Service architecture]()
+#####Service architecture
+![](https://github.com/ManishaRana1195/Microservices_Movie_Catalog_Application/blob/master/documents/Screenshot%20from%202020-04-16%2016-31-27.png)
 
 
 #### Adding Clientside Service Discovery -Eureka
 
 For the services to communicate with each other, we should register them to eureka service discovery server and add eureka client to each of the 3 services. The architecture will be updated to the following:
 
-![Architecture with service discovery]()
+#### Architecture with service discovery
+![]()
 
 #### Adding fault tolerance
 

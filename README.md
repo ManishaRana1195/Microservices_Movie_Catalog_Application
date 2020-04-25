@@ -10,7 +10,8 @@ Here, is the link to the presentation where I have summarized the basics of Micr
 As shown below in the diagram, how three services will interact. 
 
 ##### Service architecture
-![](https://github.com/ManishaRana1195/Microservices_Movie_Catalog_Application/blob/master/documents/Screenshot%20from%202020-04-16%2016-31-27.png)
+
+![](https://github.com/ManishaRana1195/Microservices_Movie_Catalog_Application/blob/master/documents/basic_architecture.png)
 
 
 #### Adding Clientside Service Discovery -Eureka
@@ -18,7 +19,14 @@ As shown below in the diagram, how three services will interact.
 For the services to communicate with each other, we should register them to eureka service discovery server and add eureka client to each of the 3 services. The architecture will be updated to the following:
 
 ##### Architecture with service discovery
-![]()
+
+![](https://github.com/ManishaRana1195/Microservices_Movie_Catalog_Application/blob/master/documents/architecture%20with%20eureka.png)       
+
+After adding the eureka service client to each microservice, they were discovered by the discovery server and the result is as shown below:
+
+##### Microservices detected by Eureka Server
+
+![](https://github.com/ManishaRana1195/Microservices_Movie_Catalog_Application/blob/master/documents/service_discovery_result.png)
 
 #### Adding fault tolerance
 

@@ -10,6 +10,8 @@ public class MovieResource {
 
     @RequestMapping("/{movieId}")
     public Movie getMovieDetailsById(@PathVariable("movieId") String movieId) {
-        return new Movie("20", "1917", "Starring benedict Cumberbatch");
+        return new Movie("movie12451", " Passengers",
+                "A spacecraft traveling to a distant colony planet and transporting thousands of people has a malfunction in its sleep chambers. As a result, two passengers are awakened 90 years early.",
+                "Morten Tyldum", 2016);
     }
 }

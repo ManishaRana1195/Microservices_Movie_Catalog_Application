@@ -5,11 +5,15 @@ public class Movie {
     private String id;
     private String name;
     private String description;
+    private String directorName;
+    private int yearOfRelease;
 
-    public Movie(String id, String name, String description) {
+    public Movie(String id, String name, String description, String directorName, int yearOfRelease) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.directorName = directorName;
+        this.yearOfRelease = yearOfRelease;
     }
 
     public String getName() {
@@ -35,4 +39,21 @@ public class Movie {
     public void setId(String id) {
         this.id = id;
     }
+
+    public String getDirectorName() {
+        return directorName;
+    }
+
+    public void setDirectorName(String directorName) {
+        this.directorName = directorName;
+    }
+
+    public int getYearOfRelease() {
+        return yearOfRelease;
+    }
+
+    public void setYearOfRelease(int yearOfRelease) {
+        this.yearOfRelease = yearOfRelease;
+    }
+
 }

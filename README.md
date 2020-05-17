@@ -48,8 +48,28 @@ Circuit breaker has certain parameters for that, it checks how many requests fai
 How do we respond to the requests that are pending?
 Have a fallback mechanism. You can either have default fallback message to the end users or serve the response saved in cache(recommeded).
 ​	
+#### Hystrix - The circuit breaker
 
+How to add hystrix to your application?
+	1. @EnableCircuitBreaker annotation to application class.
+	2. @HystrixCommand to methods making external calls, that need circuit breaker.
+	3. Configure Hystrix circuit breaker parameters.
 
+Hystrix can be configured as below, by passing parameters in the annotation:
+```
+	 @HystrixCommand(fallbackMethod = "fallbackGetUserRating", commandProperties = {
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "5000"),
+            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "20"),
+            @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "50"),
+            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "5000")
+    })
+```
+
+Hystrix creates a proxy class(wrapper) around our class whose methods has "HystrixCommand" annotation. We should call method that has @HystrixCommand from a class, not another method. If we are calling hystrix method from another method in the same class, "YOU MUST MOVE THAT HYSTRIX COMMAND METHOD INTO ANOTHER CLASS". So, here, we move  getMovie and getRating in corresponding MovieService and RatingService class.
+
+#### Bulkhead Pattern
+
+ 
 
 
 

@@ -1,5 +1,7 @@
 package com.manisharana.moviecatalogservice.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /*It is similar to class in movie details service,
  we need to un-marshall the response from movie-details service*/
 public class Movie {
@@ -9,6 +11,7 @@ public class Movie {
     private String title;
     private String overview;
 
+    @JsonProperty("release_date")
     private String releaseDate;
 
     Movie() {

@@ -68,6 +68,14 @@ Hystrix can be configured as below, by passing parameters in the annotation:
 Hystrix creates a proxy class(wrapper) around our class whose methods has "HystrixCommand" annotation. We should call method that has @HystrixCommand from a class, not another method. If we are calling hystrix method from another method in the same class, "YOU MUST MOVE THAT HYSTRIX COMMAND METHOD INTO ANOTHER CLASS". So, here, we move  getMovie and getRating in corresponding MovieService and RatingService class.
 
 #### Bulkhead Pattern
+You can restrict the number of threads that can be created for each service call outside the application. So if we restrict the thread pool size for a type of HTTP requests, even if that service/HTTP calls slow down and more threads keep getting generated, the number of threads cannot grow more than allocated thread pool size. Here the service is allowed to make 20 concurrent calls and have 10 requests in the queue. 
+
+```
+	 @HystrixCommand(fallbackMethod = "fallbackGetCatalogItem", threadPoolKey = "movieDetailServicePool", threadPoolProperties = {
+            @HystrixProperty(name = "coreSize", value = "20"),
+            @HystrixProperty(name = "maxQueueSize", value = "10")
+   	 })
+```
 
  
 

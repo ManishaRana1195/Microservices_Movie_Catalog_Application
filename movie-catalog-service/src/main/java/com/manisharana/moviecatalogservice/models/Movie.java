@@ -4,38 +4,29 @@ package com.manisharana.moviecatalogservice.models;
  we need to un-marshall the response from movie-details service*/
 public class Movie {
 
-    private String id;
 
-    private String name;
-    private String description;
-    private String directorName;
-    private int yearOfRelease;
+    private String id;
+    private String title;
+    private String overview;
+
+    private String releaseDate;
 
     Movie() {
     }
 
-    public Movie(String id, String name, String description, String directorName, int yearOfRelease) {
+    public Movie(String id, String title, String overview, String releaseDate) {
         this.id = id;
-        this.name = name;
-        this.description = description;
-        this.directorName = directorName;
-        this.yearOfRelease = yearOfRelease;
+        this.title = title;
+        this.overview = overview;
+        this.releaseDate = releaseDate;
     }
 
-    public String getName() {
-        return name;
+    public String getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
     public String getId() {
@@ -46,20 +37,20 @@ public class Movie {
         this.id = id;
     }
 
-    public String getDirectorName() {
-        return directorName;
+    public String getTitle() {
+        return title;
     }
 
-    public void setDirectorName(String directorName) {
-        this.directorName = directorName;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public int getYearOfRelease() {
-        return yearOfRelease;
+    public String getOverview() {
+        return overview;
     }
 
-    public void setYearOfRelease(int yearOfRelease) {
-        this.yearOfRelease = yearOfRelease;
+    public void setOverview(String overview) {
+        this.overview = overview;
     }
 
 }

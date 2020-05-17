@@ -15,14 +15,14 @@ public class RatingResource {
     @RequestMapping("/{movieId}")
     public Rating getRatingsByMovieId(@PathVariable("movieId") String movieId) {
         HashMap<String, Rating> map = new HashMap<>();
-        map.put("movie1290", new Rating("movie1290", "5"));
-        map.put("movie1245", new Rating("movie1245", "7"));
+        map.put("550", new Rating("550", "5"));
+        map.put("770", new Rating("770", "7"));
         return map.get(movieId);
     }
 
     @RequestMapping("/users/{userId}")
     public UserRating getRatingByUserId(@PathVariable("userId") String userId) {
-        List<Rating> ratings = Arrays.asList(new Rating("movie1290", "5"), new Rating("movie1245", "7"));
+        List<Rating> ratings = Arrays.asList(new Rating("550", "5"), new Rating("770", "7"));
         return new UserRating(ratings);
     }
 }
